@@ -4,12 +4,22 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+dependencies:
+  '@tauri-apps/plugin-clipboard-manager':
+    specifier: 2.0.0-alpha.3
+    version: 2.0.0-alpha.3
+
 devDependencies:
   '@tauri-apps/cli':
     specifier: ^2.0.0-alpha.17
     version: 2.0.0-alpha.18
 
 packages:
+
+  /@tauri-apps/api@2.0.0-alpha.11:
+    resolution: {integrity: sha512-aw7jic+MQAe/LH4fYhbd3bwx3YjXhDIwqKJIn5QO4yKmGdVURIhZSFcyeKkSe4P6Itdto0Pcz99vLfkgBwdQKw==}
+    engines: {node: '>= 18', npm: '>= 6.6.0', yarn: '>= 1.19.1'}
+    dev: false
 
   /@tauri-apps/cli-darwin-arm64@2.0.0-alpha.18:
     resolution: {integrity: sha512-FBfbfSupOYG9BXmoGi1uRoMspqm5F0BdQbfgEuTkAnTl8cxUQnzOnoEc+qkd5+QqNCPssO89nsvijDLJmyK3AQ==}
@@ -117,3 +127,9 @@ packages:
       '@tauri-apps/cli-win32-ia32-msvc': 2.0.0-alpha.18
       '@tauri-apps/cli-win32-x64-msvc': 2.0.0-alpha.18
     dev: true
+
+  /@tauri-apps/plugin-clipboard-manager@2.0.0-alpha.3:
+    resolution: {integrity: sha512-Lo30EM8VRo9bYMeRHhZT65OUgajbxaK1A9UhD7/9VZIFoWGbzKU/jrP78mcJ77lc+RrcCcSJvkAgOaLtuOlhxw==}
+    dependencies:
+      '@tauri-apps/api': 2.0.0-alpha.11
+    dev: false
