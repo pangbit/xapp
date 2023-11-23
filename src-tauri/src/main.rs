@@ -24,10 +24,12 @@ fn url_encode(input: &str) -> String {
 
 #[tauri::command]
 fn url_decode(input: &str) -> String {
-    match urlencoding::decode(input) {
-        Ok(s) => String::from_utf8_lossy(s.as_bytes()).to_string(),
-        Err(e) => format!("Decode Err: '{e:?}'"),
-    }
+    // match urlencoding::decode(input) {
+    //     Ok(s) => String::from_utf8_lossy(s.as_bytes()).to_string(),
+    //     Err(e) => format!("Decode Err: '{e:?}'"),
+    // }
+
+    String::from_utf8_lossy(urlencoding::decode_binary(input.as_bytes()).as_ref()).to_string()
 }
 
 fn main() {
